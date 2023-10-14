@@ -7,12 +7,12 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!userLoggedIn) {
+    if (userLoggedIn === false) {
       navigate('/');
     }
   }, [userLoggedIn, navigate]);
 
-  if (!userLoggedIn) {
+  if (userLoggedIn === false) {
     return null;
   }
 

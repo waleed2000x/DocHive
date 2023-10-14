@@ -7,16 +7,16 @@ import Chart from "./Chart";
 import { useUser } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 export default function Account() {
-  const { isUserLoggedIn } = useUser();
+  const { userLoggedIn } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isUserLoggedIn) {
+    if (!userLoggedIn) {
       navigate('/');
     }
-  }, [isUserLoggedIn, navigate]);
+  }, [userLoggedIn, navigate]);
 
-  if (!isUserLoggedIn) {
+  if (!userLoggedIn) {
     return null;
   }
   // eslint-disable-next-line react-hooks/rules-of-hooks
