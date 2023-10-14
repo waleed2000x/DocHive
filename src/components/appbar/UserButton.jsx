@@ -20,7 +20,7 @@ const Schema = Yup.object({
 
 
 export default function UserButton() {
-  const { userLoggedIn : status } = useUser();
+  const { userLoggedIn } = useUser();
 
   const { values, errors, handleChange, handleSubmit, resetForm } = useFormik({
     initialValues: iValues,
@@ -49,49 +49,9 @@ export default function UserButton() {
 
   return (
     <>
-      {status === true ? (
+      {userLoggedIn === true ? (
+      
         <>
-          <Button
-            variant="text"
-            className="appbar-dropdown"
-            size="large"
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            <Avatar />
-            <KeyboardArrowDownIcon />
-          </Button>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <Link
-              to="/dashboard"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <MenuItem onClick={handleDashboard}>Dashboard</MenuItem>
-            </Link>
-            <Link
-              to="/account"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <MenuItem onClick={handleClose}>Account</MenuItem>
-            </Link>
-            <MenuItem onClick={handleClose}>Settings</MenuItem>
-            <MenuItem>Logout</MenuItem>
-          </Menu>
-        </>
-      ) : (
-        <>
-          {/* {location.pathname === "/login" ? null : ( */}
             <div className="login">
               <form
                 method="post"
@@ -136,7 +96,46 @@ export default function UserButton() {
                 </Button>
               </form>
             </div>
-          {/* )} */}
+        </>
+      ) : (
+        <>
+          <Button
+            variant="text"
+            className="appbar-dropdown"
+            size="large"
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            <Avatar />
+            <KeyboardArrowDownIcon />
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <Link
+              to="/dashboard"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <MenuItem onClick={handleDashboard}>Dashboard</MenuItem>
+            </Link>
+            <Link
+              to="/account"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <MenuItem onClick={handleClose}>Account</MenuItem>
+            </Link>
+            <MenuItem onClick={handleClose}>Settings</MenuItem>
+            <MenuItem>Logout</MenuItem>
+          </Menu>
         </>
       )}
     </>

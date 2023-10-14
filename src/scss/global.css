@@ -413,11 +413,11 @@ body {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .login-parent .login-card .inputs-login .signup-inputs .MUI-textfield-Email .MuiOutlinedInput-root {
   color: white;
-  width: 300px;
+  width: 280px;
 }
 .login-parent .login-card .inputs-login .signup-inputs .MUI-textfield-Email .MuiInputLabel-root {
   color: rgba(67, 255, 100, 0.8509803922);
@@ -430,7 +430,7 @@ body {
 }
 .login-parent .login-card .inputs-login .signup-inputs .MUI-textfield .MuiOutlinedInput-root {
   color: white;
-  width: 240px;
+  width: 230px;
 }
 .login-parent .login-card .inputs-login .signup-inputs .MUI-textfield .MuiInputLabel-root {
   color: rgba(67, 255, 100, 0.8509803922);
@@ -450,16 +450,15 @@ body {
   color: black;
   background-color: white;
   border: 0px;
-  font-weight: 900;
-  padding: 5px 0px;
-  width: 120px;
+  width: 50px;
+  height: 50px;
+}
+.login-parent .login-card .inputs-login .auth-buttons .googleButton img {
+  width: 30px;
+  height: 30px;
 }
 .login-parent .login-card .inputs-login .auth-buttons .googleButton svg {
-  margin-bottom: 3px;
-  font-size: 20px;
-}
-.login-parent .login-card .inputs-login .auth-buttons .googleButton svg {
-  color: #4c8bf5;
+  font-size: 35px;
 }
 .login-parent .login-card .inputs-login .auth-buttons .facebookButton {
   background-color: #3b5998;
@@ -467,7 +466,6 @@ body {
   color: white;
   font-weight: 900;
   padding: 5px 0px;
-  width: 120px;
 }
 .login-parent .login-card .inputs-login .auth-buttons .facebookButton svg {
   margin-bottom: 3px;

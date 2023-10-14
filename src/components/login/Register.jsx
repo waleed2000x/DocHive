@@ -171,7 +171,7 @@ const StyledDivider = styled(Divider)`
     color: #43ff64d9;
     background-color: #43ff64d9;
     height: 1px;
-    margin: 20px 0;
+    margin: 35px 0px 0px 0px;
     width: 95%;
   }
 `;
