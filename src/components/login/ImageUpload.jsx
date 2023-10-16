@@ -14,9 +14,8 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
       const objectURL = URL.createObjectURL(file);
       setImage(objectURL);
       setMessage("");
-      // Call handleChange to set the image value in formik
       handleChange({ target: { name: "image", value: objectURL } });
-      handleBlur({ target: { name: "image" } }); // Trigger blur event to validate the field
+      handleBlur({ target: { name: "image" } });
     } else {
       setImage(null);
       setAlert(true);
@@ -104,10 +103,6 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
           </div>
         </CardContent>
       </Card>
-      {/* Display the image error message if it exists */}
-      {errors.image && (
-        <div style={{ color: "red", fontSize: "14px" }}>{errors.image}</div>
-      )}
     </div>
   );
 }

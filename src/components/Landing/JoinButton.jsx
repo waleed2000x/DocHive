@@ -1,22 +1,26 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { useUser } from "../../context/UserContext";
 
 export default function JoinButton() {
-  const status = "unauthenticated";
-  if (status === "authenticated") {
-    return (
-      <Link to="/dashboard">
-        <StyledButton variant="filled" color="success">
-          Dashboard
-        </StyledButton>
-      </Link>
-    );
-  } else if (status === "unauthenticated") {
+
+  const {userLoggedIn} = useUser();
+  console.log(userLoggedIn);
+
+  if (!userLoggedIn) {
     return (
       <Link to="/register">
         <StyledButton variant="filled" color="success">
           Register
+        </StyledButton>
+      </Link>
+    );
+  } else {
+    return (
+      <Link to="/dashboard">
+        <StyledButton variant="filled" color="success">
+          Dashboard
         </StyledButton>
       </Link>
     );

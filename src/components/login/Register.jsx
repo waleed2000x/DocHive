@@ -57,6 +57,7 @@ const {errors, values, handleBlur, handleChange, handleSubmit, resetForm} = useF
   initialValues: iValues,
   onSubmit: ()=>{
     resetForm()
+    console.log(values)
   },
 })
   return (

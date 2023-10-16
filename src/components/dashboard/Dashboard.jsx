@@ -18,7 +18,6 @@ export default function Dashboard() {
   if (userLoggedIn === false) {
     return null;
   }
-
   return (
     <div className="dashboard-parent">
       <div className="dashboard-center">
