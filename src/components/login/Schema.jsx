@@ -19,14 +19,14 @@ const RegisterSchema = Yup.object({
     .max(10, 'Password must not exceed 10 characters')
     .matches(
       /^(?=.*\d)(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/,
-      'Password must include at least one uppercase letter, one number, and one special character'
+      'Password must include 1 uppercase letter, 1 number & one special character'
     ),
     contact: Yup.string()
     .required('Contact is required')
     .matches(/^\d+$/, 'Contact must contain only numbers'),
     gender: Yup.string()
     .required('Gender is required')
-    .oneOf(['male', 'female'], 'Invalid gender. Choose "male" or "female".'),
+    .oneOf(['Male', 'Female'], 'Invalid gender. Choose "male" or "female".'),
     city: Yup.string().required('City is required'),
     country: Yup.string().required('Country is required')
 })
