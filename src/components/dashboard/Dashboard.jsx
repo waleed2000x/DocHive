@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { useEffect } from 'react';
-
 export default function Dashboard() {
   const { userLoggedIn } = useUser();
   const navigate = useNavigate();
@@ -18,7 +17,9 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-parent">
-      <div className="dashboard-center">Your dashboard content goes here</div>
+      <div className="dashboard-center">
+      <h1>Dashboard</h1>
+      </div>
     </div>
   );
 }

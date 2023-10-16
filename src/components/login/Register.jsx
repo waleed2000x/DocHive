@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Alert,
   AlertTitle,
@@ -17,9 +17,19 @@ import LoginLottie from "./LoginLottie";
 import { styled } from "styled-components";
 import AuthButtons from "./AuthButtons";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ImageUpload from "./ImageUpload";
 import Countries from "./Countries";
+import { useUser } from "../../context/UserContext";
 export default function Resigter() {
+
+  const navigate = useNavigate()
+  const{ userLoggedIn} = useUser();
+  useEffect(() => {
+    if(userLoggedIn){
+      navigate('/')
+    }
+  }, [userLoggedIn, navigate])
   // eslint-disable-next-line no-unused-vars
   const [alert, setAlert] = useState(false);
   // eslint-disable-next-line no-unused-vars

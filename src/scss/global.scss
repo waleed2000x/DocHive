@@ -457,6 +457,7 @@ body {
   .dashboard-center {
     width: 98%;
     margin-top: 15px;
+// transform: skew(-20deg);
     @include GlassComponent();
   }
 }
