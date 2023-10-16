@@ -346,7 +346,6 @@ body {
   .login-card {
     display: flex;
     width: 70%;
-    margin-top: 20px;
     @include GlassComponent();
     .login-lottie {
       position: relative;
@@ -424,7 +423,7 @@ body {
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        height: 50%;
+        padding-bottom: 10px;
         .googleButton {
           color: black;
           background-color: white;

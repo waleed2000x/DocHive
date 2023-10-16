@@ -12,7 +12,9 @@ import {
   MenuItem,
   OutlinedInput,
   Button,
+  FormHelperText,
 } from "@mui/material";
+import * as Yup from  'yup'
 import LoginLottie from "./LoginLottie";
 import { styled } from "styled-components";
 import AuthButtons from "./AuthButtons";
@@ -36,11 +38,6 @@ export default function Resigter() {
   const [alert, setAlert] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [alertErr, setAlertErr] = useState(false);
-  // const [selectedCountry, setSelectedCountry] = useState("");
-
-  // const handleChangeCountry = (event) => {
-  //   setSelectedCountry(event.target.value);
-  // };
 
   const iValues = {
     email: '',
@@ -51,6 +48,21 @@ export default function Resigter() {
     city:'',
     country:''
   }
+
+  const {values, errors, handleBlur, handleChange, handleSubmit, resetForm} = useFormik({
+    initialValues:iValues,
+    validationSchema:RegisterSchema,
+    onSubmit: () => {
+      setAlert(true)
+      setTimeout(() => {
+        setAlert(false)
+      }, 4000);
+      setTimeout(() => {
+        resetForm()
+        navigate('/')
+      }, 1000);
+    }
+  })
   return (
     <div className="login-parent">
       {alertErr ? (
@@ -88,10 +100,10 @@ export default function Resigter() {
           <Alert severity="success">
             <AlertTitle>
               <b>
-                Email Sent to <b>someone@something.com</b>!
+                Registration Successful!
               </b>
             </AlertTitle>
-            An Email has been sent to your email address.
+            Your account has been successfully created!
           </Alert>
         </div>
       ) : null}
@@ -108,6 +120,12 @@ export default function Resigter() {
                 label="Email"
                 className="MUI-textfield-Email"
                 placeholder="Email"
+                name="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+                error={errors?.email}
+                helperText={errors?.email || ' '}
               />
             </div>
             <div className="input">
@@ -116,12 +134,24 @@ export default function Resigter() {
                 label="Full Name"
                 className="MUI-textfield"
                 placeholder="Full Name"
+                name="fullname"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.fullname}
+                error={errors?.fullname}
+                helperText={errors?.fullname || ' '}
               />
               <TextField
                 variant="outlined"
                 label="Password"
                 className="MUI-textfield"
                 placeholder="Password"
+                name="password"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.password}
+                error={errors?.password}
+                helperText={errors?.password || ' '}
               />
             </div>
             <div className="input">
@@ -130,12 +160,24 @@ export default function Resigter() {
                 label="Contact"
                 className="MUI-textfield"
                 placeholder="Contact"
+                name="contact"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.contact}
+                error={errors?.contact}
+                helperText={errors?.contact || ' '}
               />
               <TextField
                 variant="outlined"
                 label="Gender"
                 className="MUI-textfield"
                 placeholder="Male/Female"
+                name="gender"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.gender}
+                error={errors?.gender}
+                helperText={errors?.gender || ' '}
               />
             </div>
             <div className="input">
@@ -144,10 +186,20 @@ export default function Resigter() {
                 label="City"
                 className="MUI-textfield"
                 placeholder="City"
+                name="city"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.city}
+                error={errors?.city}
+                helperText={errors?.city || ' '}
               />
               <FormControl variant="outlined" className="MUI-textfield">
                 <InputLabel>Country</InputLabel>
                 <Select 
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.country}
+                name="country"
                   input={<OutlinedInput label="Country" />}
                 >
                   {Countries.map((country, index) => (
@@ -156,9 +208,11 @@ export default function Resigter() {
                     </MenuItem>
                   ))}
                 </Select>
+                <FormHelperText style={{color:'red', fontWeight:'300'}}>{errors?.country || ' '}</FormHelperText>
+                {/* <p style={{color:'red', margin:'0px', padding:'5px 0px',fontWeight:'200', fontSize:'12px'}}>{errors?.country || ' '}</p> */}
               </FormControl>
             </div>
-            <StyledButton variant="outlined" color="success">
+            <StyledButton onClick={handleSubmit} variant="outlined" color="success">
               Continue
             </StyledButton>
           </div>
@@ -167,8 +221,8 @@ export default function Resigter() {
               style={{
                 backgroundColor: "#04bf3c",
                 color: "black",
-                fontWeight: "800",
-                fontSize: "20px",
+                fontWeight: "600",
+                fontSize: "15px",
               }}
               label="OR"
             />
@@ -189,8 +243,8 @@ const StyledDivider = styled(Divider)`
     justify-content: center;
     color: #43ff64d9;
     background-color: #43ff64d9;
-    height: 1px;
-    margin: 35px 0px 0px 0px;
+    height: 0.5px;
+    margin: 20px 0px 20px 0px;
     width: 95%;
   }
 `;
@@ -199,7 +253,7 @@ const StyledButton = styled(Button)`
   && {
     color: black;
     border-color: #43ff64d9;
-    margin: 25px 0px 10px 0px;
+    margin: 10px 0px 5px 0px;
     padding: 10px;
     font-weight: bolder;
     font-size: 15px;
