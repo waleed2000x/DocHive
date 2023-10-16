@@ -9,7 +9,7 @@ width: 100%;
 height: 90vh;
 align-items: center;
 justify-content: center;
-opacity: 0.8;
+opacity: 0.9;
 `
 const Heading = styled.h1`
 font-size: 70px;
