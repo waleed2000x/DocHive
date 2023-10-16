@@ -456,14 +456,20 @@ body {
   justify-content: center;
   .dashboard-center {
     width: 98%;
-    margin-top: 15px;
+    margin-top: 25px;
 // transform: skew(-20deg);
+.row{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 .recent-chats{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 30%;
+  height: 40vh;
+  // padding: 10px 0px;
   @include GlassComponent();
   .recent-chat-title{
     display: flex;
@@ -473,6 +479,7 @@ body {
     font-weight: 600;
     font-size: 20px;
     & p {
+      margin: 10px;
       display: flex;
       align-items: center;
       height: 20px;
@@ -517,5 +524,11 @@ body {
     }
   }
     }
+    .profile-information{
+      height: 40vh;
+      width: 67%;
+      @include GlassComponent();
+    }
   }
+}
 }

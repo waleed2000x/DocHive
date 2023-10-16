@@ -480,14 +480,20 @@ body {
 }
 .dashboard-parent .dashboard-center {
   width: 98%;
-  margin-top: 15px;
+  margin-top: 25px;
 }
-.dashboard-parent .dashboard-center .recent-chats {
+.dashboard-parent .dashboard-center .row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.dashboard-parent .dashboard-center .row .recent-chats {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 30%;
+  height: 40vh;
   border: 3px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -495,7 +501,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-chat-title {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-chat-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -503,21 +509,22 @@ body {
   font-weight: 600;
   font-size: 20px;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-chat-title p {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-chat-title p {
+  margin: 10px;
   display: flex;
   align-items: center;
   height: 20px;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-chat-title p svg {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-chat-title p svg {
   font-size: 35px;
   padding-right: 10px;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list {
   display: flex;
   flex-direction: column;
   width: 60%;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -528,21 +535,31 @@ body {
   height: -moz-max-content;
   height: max-content;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message .recent-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info h4 {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message .recent-info h4 {
   margin: 0px;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info h4 span {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message .recent-info h4 span {
   color: rgba(67, 255, 100, 0.8509803922);
   margin: 0px;
 }
-.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info p {
+.dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message .recent-info p {
   margin: 5px 0px 0px 0px;
   font-size: 10px;
   padding-left: 30px;
+}
+.dashboard-parent .dashboard-center .row .profile-information {
+  height: 40vh;
+  width: 67%;
+  border: 3px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }/*# sourceMappingURL=global.css.map */

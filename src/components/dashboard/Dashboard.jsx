@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import { Avatar, Divider } from '@mui/material';
 import styled from 'styled-components';
+import DP from '../../favicon.ico'
 export default function Dashboard() {
   const { userLoggedIn } = useUser();
   const navigate = useNavigate();
@@ -21,27 +22,38 @@ export default function Dashboard() {
   return (
     <div className="dashboard-parent">
       <div className="dashboard-center">
+      <div className='row'>
       <div className='recent-chats'>
       <div className='recent-chat-title'>
         <p><RecentActorsIcon />Recent Encounters</p>
       </div>
       <div className='recent-list'>
         <div className='user-message'>
-          <Avatar />
+          <Avatar src={DP} />
           <div className='recent-info'>
-          <h4>Name:<span> Waleed</span></h4>
+          <h4>Name:<span> John</span></h4>
           <p>lorem insum dolor sit umet</p>
           </div>
         </div>
         <StyledDivider />
         <div className='user-message'>
-          <Avatar />
+          <Avatar src={DP} />
           <div className='recent-info'>
-          <h4>Name:<span> Ahmed</span></h4>
+          <h4>Name:<span> Doe</span></h4>
+          <p>lorem insum dolor sit umet</p>
+          </div>
+        </div>
+        <StyledDivider />
+        <div className='user-message'>
+          <Avatar src={DP} />
+          <div className='recent-info'>
+          <h4>Name:<span> Khan</span></h4>
           <p>lorem insum dolor sit umet</p>
           </div>
         </div>
       </div>
+      </div>
+      <div className='profile-information'></div>
       </div>
       </div>
     </div>
