@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { useEffect } from 'react';
+import RecentActorsIcon from '@mui/icons-material/RecentActors';
 export default function Dashboard() {
   const { userLoggedIn } = useUser();
   const navigate = useNavigate();
@@ -18,7 +19,11 @@ export default function Dashboard() {
   return (
     <div className="dashboard-parent">
       <div className="dashboard-center">
-      <h1>Dashboard</h1>
+      <div className='recent-chats'>
+      <div className='recent-chat-title'>
+        <p><RecentActorsIcon />Recent Encounters</p>
+      </div>
+      </div>
       </div>
     </div>
   );

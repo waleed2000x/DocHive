@@ -458,6 +458,29 @@ body {
     width: 98%;
     margin-top: 15px;
 // transform: skew(-20deg);
-    @include GlassComponent();
+.recent-chats{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  @include GlassComponent();
+  .recent-chat-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    & p {
+      display: flex;
+      align-items: center;
+      height: 20px;
+      & svg {
+        font-size: 35px;
+        padding-right: 10px;
+      }
+    }
+  }
+    }
   }
 }
