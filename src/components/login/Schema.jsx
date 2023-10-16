@@ -1,12 +1,6 @@
 import * as Yup from 'yup'
 
 const RegisterSchema = Yup.object({
-    image: Yup.mixed()
-    .test('fileType', 'Invalid file type. Only images are allowed.', (value) => {
-      if (!value) return true; // Allow an empty value (no image)
-      return value && (value.type.startsWith('image/') || /\.(jpg|jpeg|png|gif)$/.test(value.name));
-    })
-    .required('Image is required'),
     email: Yup.string()
     .required('Email is required')
     .matches(
@@ -36,4 +30,4 @@ const RegisterSchema = Yup.object({
     city: Yup.string().required('City is required'),
     country: Yup.string().required('Country is required')
 })
-export default RegisterSchema
+export default RegisterSchema;

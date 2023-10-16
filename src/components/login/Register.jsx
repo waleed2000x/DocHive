@@ -43,7 +43,6 @@ export default function Resigter() {
   // };
 
   const iValues = {
-    image : "",
     email: '',
     fullname : '',
     password:'',
@@ -111,7 +110,7 @@ const {errors, values, handleBlur, handleChange, handleSubmit, resetForm} = useF
         <div className="inputs-login">
           <div className="signup-inputs">
             <div className="input">
-              <ImageUpload handleChange={handleChange} values={values} errors={errors} handleBlur={handleBlur} />
+              <ImageUpload />
               <TextField
                 variant="outlined"
                 label="Email"
@@ -190,7 +189,7 @@ const {errors, values, handleBlur, handleChange, handleSubmit, resetForm} = useF
                   value={values.country}
                   onChange={handleChange}
                 name="country"
-                error={errors.country}
+                error={errors?.country}
                 onBlur={handleBlur}
                 helperText={errors?.country || ' '}
                   input={<OutlinedInput label="Country" />}

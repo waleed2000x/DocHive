@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import { Alert, AlertTitle, Card, CardContent } from "@mui/material";
 import { useDropzone } from "react-dropzone";
 import { useCallback, useState } from "react";
 
-export default function ImageUpload({ handleChange, values, errors, handleBlur }) {
+export default function ImageUpload() {
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
   const [alert, setAlert] = useState(false);
@@ -14,8 +13,6 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
       const objectURL = URL.createObjectURL(file);
       setImage(objectURL);
       setMessage("");
-      handleChange({ target: { name: "image", value: objectURL } });
-      handleBlur({ target: { name: "image" } });
     } else {
       setImage(null);
       setAlert(true);
@@ -26,7 +23,7 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
         "Invalid file format. Please upload a png, webp, jpg, or jpeg file."
       );
     }
-  }, [handleChange, handleBlur]);
+  }, []);
 
   const isFileFormatValid = (file) => {
     const validFormats = ["image/png", "image/webp", "image/jpeg", "image/jpg"];
@@ -73,7 +70,12 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
           <div
             {...getRootProps()}
             style={{
-              ...dropzoneStyles,
+              border: "2px dashed transparent",
+              borderRadius: "50%",
+              textAlign: "center",
+              padding: "0px",
+              cursor: "pointer",
+              margin: "0 auto",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -83,7 +85,15 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
           >
             <input {...getInputProps()} />
             <div
-              style={{ ...circleStyles, width: imageSize, height: imageSize }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "50%",
+                overflow: "hidden",
+                width: imageSize,
+                height: imageSize,
+              }}
             >
               {image ? (
                 <img
@@ -106,20 +116,3 @@ export default function ImageUpload({ handleChange, values, errors, handleBlur }
     </div>
   );
 }
-
-const dropzoneStyles = {
-  border: "2px dashed transparent",
-  borderRadius: "50%",
-  textAlign: "center",
-  padding: "0px",
-  cursor: "pointer",
-  margin: "0 auto",
-};
-
-const circleStyles = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "50%",
-  overflow: "hidden",
-};
