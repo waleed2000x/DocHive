@@ -40,10 +40,10 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 98%;
-  height: 100px;
+  height: 90px;
   margin-top: 10px;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -80,7 +80,7 @@ body {
 .appbar .appbar-center .login .appbar-form {
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 90px;
 }
 .appbar .appbar-center .login .appbar-form p {
   height: 15px;
@@ -156,7 +156,7 @@ body {
   width: 80%;
   height: 100%;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -227,7 +227,7 @@ body {
   height: 70%;
   padding-bottom: 50px;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -278,7 +278,7 @@ body {
   min-height: 70vh;
   z-index: 20;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -333,7 +333,7 @@ body {
   height: 180px;
   padding: 10px;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -345,7 +345,7 @@ body {
   align-items: center;
   width: 70%;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -367,7 +367,7 @@ body {
   width: 70%;
   margin-top: 20px;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -484,11 +484,12 @@ body {
 }
 .dashboard-parent .dashboard-center .recent-chats {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 30%;
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
@@ -510,4 +511,38 @@ body {
 .dashboard-parent .dashboard-center .recent-chats .recent-chat-title p svg {
   font-size: 35px;
   padding-right: 10px;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: -moz-max-content;
+  height: max-content;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info h4 {
+  margin: 0px;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info h4 span {
+  color: rgba(67, 255, 100, 0.8509803922);
+  margin: 0px;
+}
+.dashboard-parent .dashboard-center .recent-chats .recent-list .user-message .recent-info p {
+  margin: 5px 0px 0px 0px;
+  font-size: 10px;
+  padding-left: 30px;
 }/*# sourceMappingURL=global.css.map */

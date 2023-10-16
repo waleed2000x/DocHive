@@ -3,7 +3,7 @@
   font-family: "Rubik", sans-serif;
 }
 // MEASUREMENTS
-$AppbarHeight: 100px;
+$AppbarHeight: 90px;
 // COLORS
 
 $neon: #43ff64d9;
@@ -11,7 +11,7 @@ $white: white;
 
 @mixin GlassComponent {
   border: 3px solid rgba(255, 255, 255, 0.06);
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
@@ -460,6 +460,7 @@ body {
 // transform: skew(-20deg);
 .recent-chats{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 30%;
@@ -478,6 +479,40 @@ body {
       & svg {
         font-size: 35px;
         padding-right: 10px;
+      }
+    }
+  }
+  .recent-list{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    .user-message{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: $white;
+      border-radius: 10px;
+      padding: 10px;
+      // margin-top: 20px;
+      height: max-content;
+      .recent-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        & h4 {
+          margin: 0px;
+          & span {
+            color: $neon;
+            margin: 0px;
+          }
+        }
+        & p{
+          margin: 5px 0px 0px 0px;
+          font-size: 10px;
+          padding-left: 30px;
+        }
       }
     }
   }
