@@ -7,6 +7,7 @@ import Register from "./components/login/Register";
 import BackgroundAnimation from "./components/BackgroundAnimation/BackgroundAnimation";
 import "./scss/global.css";
 import UserProvider, { useUser } from "./context/UserContext";
+import Error from "./components/error/Error";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/account" element={<Account />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </UserProvider>
     </>
