@@ -21,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 import ImageUpload from "./ImageUpload";
 import Countries from "./Countries";
 import { useUser } from "../../context/UserContext";
+import { useFormik } from "formik";
+import RegisterSchema from "./Schema";
 export default function Resigter() {
 
   const navigate = useNavigate()
@@ -34,12 +36,29 @@ export default function Resigter() {
   const [alert, setAlert] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [alertErr, setAlertErr] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("");
+  // const [selectedCountry, setSelectedCountry] = useState("");
 
-  const handleChangeCountry = (event) => {
-    setSelectedCountry(event.target.value);
-  };
+  // const handleChangeCountry = (event) => {
+  //   setSelectedCountry(event.target.value);
+  // };
 
+  const iValues = {
+    image : "",
+    email: '',
+    fullname : '',
+    password:'',
+    contact:'',
+    gender:'',
+    city:'',
+    country:''
+  }
+const {errors, values, handleBlur, handleChange, handleSubmit, resetForm} = useFormik({
+  validationSchema:RegisterSchema,
+  initialValues: iValues,
+  onSubmit: ()=>{
+    resetForm()
+  },
+})
   return (
     <div className="login-parent">
       {alertErr ? (
@@ -91,12 +110,17 @@ export default function Resigter() {
         <div className="inputs-login">
           <div className="signup-inputs">
             <div className="input">
-              <ImageUpload />
+              <ImageUpload handleChange={handleChange} values={values} errors={errors} handleBlur={handleBlur} />
               <TextField
                 variant="outlined"
                 label="Email"
                 className="MUI-textfield-Email"
                 placeholder="Email"
+                onChange={handleChange}
+                name="email"
+                error={errors.email}
+                onBlur={handleBlur}
+                helperText={errors?.email || ' '}
               />
             </div>
             <div className="input">
@@ -105,12 +129,22 @@ export default function Resigter() {
                 label="Full Name"
                 className="MUI-textfield"
                 placeholder="Full Name"
+                onChange={handleChange}
+                name="fullname"
+                error={errors.fullname}
+                onBlur={handleBlur}
+                helperText={errors?.fullname || ' '}
               />
               <TextField
                 variant="outlined"
                 label="Password"
                 className="MUI-textfield"
                 placeholder="Password"
+                onChange={handleChange}
+                name="password"
+                error={errors.password}
+                onBlur={handleBlur}
+                helperText={errors?.password || ' '}
               />
             </div>
             <div className="input">
@@ -119,12 +153,22 @@ export default function Resigter() {
                 label="Contact"
                 className="MUI-textfield"
                 placeholder="Contact"
+                onChange={handleChange}
+                name="contact"
+                error={errors.contact}
+                onBlur={handleBlur}
+                helperText={errors?.contact || ' '}
               />
               <TextField
                 variant="outlined"
                 label="Gender"
                 className="MUI-textfield"
                 placeholder="Male/Female"
+                onChange={handleChange}
+                name="gender"
+                error={errors.gender}
+                onBlur={handleBlur}
+                helperText={errors?.gender || ' '}
               />
             </div>
             <div className="input">
@@ -133,12 +177,21 @@ export default function Resigter() {
                 label="City"
                 className="MUI-textfield"
                 placeholder="City"
+                onChange={handleChange}
+                name="city"
+                error={errors.city}
+                onBlur={handleBlur}
+                helperText={errors?.city || ' '}
               />
               <FormControl variant="outlined" className="MUI-textfield">
                 <InputLabel>Country</InputLabel>
-                <Select
-                  value={selectedCountry}
-                  onChange={handleChangeCountry}
+                <Select 
+                  value={values.country}
+                  onChange={handleChange}
+                name="country"
+                error={errors.country}
+                onBlur={handleBlur}
+                helperText={errors?.country || ' '}
                   input={<OutlinedInput label="Country" />}
                 >
                   {Countries.map((country, index) => (
@@ -149,7 +202,7 @@ export default function Resigter() {
                 </Select>
               </FormControl>
             </div>
-            <StyledButton variant="outlined" color="success">
+            <StyledButton variant="outlined" onClick={handleSubmit} color="success">
               Continue
             </StyledButton>
           </div>

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Alert, AlertTitle, Card, CardContent } from "@mui/material";
 import { useDropzone } from "react-dropzone";
 import { useCallback, useState } from "react";
 
-export default function ImageUpload() {
+export default function ImageUpload({ handleChange, values, errors, handleBlur }) {
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
   const [alert, setAlert] = useState(false);
@@ -13,6 +14,9 @@ export default function ImageUpload() {
       const objectURL = URL.createObjectURL(file);
       setImage(objectURL);
       setMessage("");
+      // Call handleChange to set the image value in formik
+      handleChange({ target: { name: "image", value: objectURL } });
+      handleBlur({ target: { name: "image" } }); // Trigger blur event to validate the field
     } else {
       setImage(null);
       setAlert(true);
@@ -23,7 +27,7 @@ export default function ImageUpload() {
         "Invalid file format. Please upload a png, webp, jpg, or jpeg file."
       );
     }
-  }, []);
+  }, [handleChange, handleBlur]);
 
   const isFileFormatValid = (file) => {
     const validFormats = ["image/png", "image/webp", "image/jpeg", "image/jpg"];
@@ -100,6 +104,10 @@ export default function ImageUpload() {
           </div>
         </CardContent>
       </Card>
+      {/* Display the image error message if it exists */}
+      {errors.image && (
+        <div style={{ color: "red", fontSize: "14px" }}>{errors.image}</div>
+      )}
     </div>
   );
 }
