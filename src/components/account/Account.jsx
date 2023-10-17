@@ -42,8 +42,6 @@ export default function Account() {
       }, 5000);
     },
   });
-  // const { data } = useSession();
-
   return (
     <div className="profile">
       <div className="profile-center">
@@ -64,26 +62,23 @@ export default function Account() {
           </div>
         ) : null}
         <Avatar
-          sx={{ width: 150, height: 150 }}
+          sx={{ width: 120, height: 120 }}
           style={{
             marginTop: "10px",
             border: "5px solid rgba(255, 255, 255, 0.06)",
           }}
-          // src={data?.user?.image}
         />
         <StyledTextField
           style={{ marginTop: "20px" }}
           color="success"
           label="name"
           placeholder="name"
-          //  value={data?.user?.name}
         />
         <StyledTextField
           style={{ marginTop: "25px" }}
           label="email"
           color="success"
           placeholder="email"
-          //  value={data?.user?.email}
         />
         <StyledTextField
           style={{ marginTop: "25px" }}
@@ -143,7 +138,7 @@ const StyledButton = styled(Button)`
   && {
     color: black;
     border-color: #43ff64d9;
-    margin: 20px 0px;
+    margin: 0px 0px 20px 0px;
     padding: 10px;
     font-weight: bolder;
     font-size: 15px;
