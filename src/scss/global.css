@@ -550,6 +550,7 @@ body {
 .dashboard-parent .dashboard-center .row .recent-chats .recent-list .user-message .recent-info p {
   margin: 5px 0px 0px 0px;
   font-size: 10px;
+  font-style: italic;
   padding-left: 30px;
 }
 .dashboard-parent .dashboard-center .row .profile-information {

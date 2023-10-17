@@ -32,7 +32,7 @@ export default function Dashboard() {
           <Avatar src={DP} />
           <div className='recent-info'>
           <h4>Name:<span> John</span></h4>
-          <p>lorem insum dolor sit umet</p>
+          <p>lorem insum dolor sit umet...</p>
           </div>
         </div>
         <StyledDivider />
@@ -40,7 +40,7 @@ export default function Dashboard() {
           <Avatar src={DP} />
           <div className='recent-info'>
           <h4>Name:<span> Doe</span></h4>
-          <p>lorem insum dolor sit umet</p>
+          <p>Waiting for you for the past...</p>
           </div>
         </div>
         <StyledDivider />
@@ -48,7 +48,7 @@ export default function Dashboard() {
           <Avatar src={DP} />
           <div className='recent-info'>
           <h4>Name:<span> Khan</span></h4>
-          <p>lorem insum dolor sit umet</p>
+          <p>lorem insum dolor sit umet...</p>
           </div>
         </div>
       </div>
