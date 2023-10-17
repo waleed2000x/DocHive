@@ -492,7 +492,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 30%;
-  height: 40vh;
+  height: 300px;
   border: 3px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -553,7 +553,8 @@ body {
   padding-left: 30px;
 }
 .dashboard-parent .dashboard-center .row .profile-information {
-  height: 40vh;
+  display: flex;
+  height: 300px;
   width: 67%;
   border: 3px solid rgba(255, 255, 255, 0.06);
   border-radius: 20px;
@@ -561,4 +562,39 @@ body {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-avatar .dash-avatar {
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgba(67, 255, 100, 0.8509803922);
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-details {
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-details h1 {
+  color: white;
+  font-size: 30px;
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-details h1 span {
+  color: rgba(67, 255, 100, 0.8509803922);
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-details p {
+  color: white;
+}
+.dashboard-parent .dashboard-center .row .profile-information .dashboard-details p span {
+  color: rgba(67, 255, 100, 0.8509803922);
+}
+.dashboard-parent .dashboard-center .row .profile-information .activity-graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
 }/*# sourceMappingURL=global.css.map */

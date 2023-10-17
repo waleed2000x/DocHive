@@ -5,6 +5,7 @@ import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import { Avatar, Divider } from '@mui/material';
 import styled from 'styled-components';
 import DP from '../../favicon.ico'
+import ActivityGraph from './ActivityGraph';
 export default function Dashboard() {
   const { userLoggedIn } = useUser();
   const navigate = useNavigate();
@@ -52,7 +53,21 @@ export default function Dashboard() {
         </div>
       </div>
       </div>
-      <div className='profile-information'></div>
+      <div className='profile-information'>
+        <div className='dashboard-avatar'>
+          <Avatar className='dash-avatar' />
+        </div>
+        <div className='dashboard-details'>
+          <h1>Name: <span> John Doe</span></h1>
+          <p>Email: <span> exmaple@example.com</span></p>
+          <p>Contact: <span> 09012910212</span></p>
+          <p>Gender: <span> Male</span></p>
+          <p>Specialzation: <span> Neurologist</span></p>
+        </div>
+        <div className='activity-graph'>
+          <ActivityGraph />
+        </div>
+      </div>
       </div>
       </div>
     </div>
