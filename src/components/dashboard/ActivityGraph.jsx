@@ -21,7 +21,7 @@ ChartJS.register(
             labels:['Mon', "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             datasets:[{
                 label:'Daily Time Use',
-                data:[3, 5, 6.7, 6, 3, 2, 2],
+                data:[3, 9, 6.7, 3, 10, 2, 0],
                 backgroundColor:'white',
                 borderColor:'#43ff64',
                 pointBorderColor:'white',
