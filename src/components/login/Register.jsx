@@ -48,7 +48,14 @@ export default function Resigter() {
     country:''
   }
 
-  const {values, errors, handleBlur, handleChange, handleSubmit, resetForm} = useFormik({
+  const {
+    values, 
+    errors, 
+    handleBlur, 
+    handleChange, 
+    handleSubmit, 
+    resetForm
+  } = useFormik({
     initialValues:iValues,
     validationSchema:RegisterSchema,
     onSubmit: () => {
