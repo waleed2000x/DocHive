@@ -5,7 +5,7 @@ import { useState, useContext, createContext } from 'react';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [userLoggedIn, setUserLoggedIn] = useState(true);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
 
   return (

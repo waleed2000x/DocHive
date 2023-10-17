@@ -22,6 +22,8 @@ export default function Account() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [alert, setAlert] = useState(false);
   let iValues = {
+    fullname:'',
+    email : '',
     contact: "",
     city: "",
     specialization: "",
@@ -64,24 +66,31 @@ export default function Account() {
         <Avatar
           sx={{ width: 120, height: 120 }}
           style={{
-            marginTop: "10px",
+            margin: "10px 0px",
             border: "5px solid rgba(255, 255, 255, 0.06)",
           }}
         />
         <StyledTextField
-          style={{ marginTop: "20px" }}
           color="success"
-          label="name"
-          placeholder="name"
+          label="Full Name"
+          name="fullname"
+          value={values.fullname}
+          onChange={handleChange}
+          placeholder="fullname"
+          error={errors?.fullname}
+          helperText={errors?.fullname || ' '}
         />
         <StyledTextField
-          style={{ marginTop: "25px" }}
-          label="email"
+          label="Email"
           color="success"
+          name="email"
+          value={values.email}
+          error={errors?.email}
+          onChange={handleChange}
           placeholder="email"
+          helperText={errors?.email || ' '}
         />
         <StyledTextField
-          style={{ marginTop: "25px" }}
           color="success"
           name="specialization"
           label="Specialization"
@@ -89,7 +98,7 @@ export default function Account() {
           onChange={handleChange}
           placeholder="Specialization"
           error={errors.specialization}
-          helperText={errors.specialization || " "}
+          helperText={errors?.specialization || " "}
         />
         <StyledTextField
           color="success"
@@ -99,7 +108,7 @@ export default function Account() {
           onChange={handleChange}
           placeholder="Contact"
           error={errors.contact}
-          helperText={errors.contact || " "}
+          helperText={errors?.contact || " "}
         />
         <StyledTextField
           color="success"
@@ -109,11 +118,15 @@ export default function Account() {
           onChange={handleChange}
           placeholder="City"
           error={errors.city}
-          helperText={errors.city || " "}
+          helperText={errors?.city || " "}
         />
-        <StyledButton onClick={handleSubmit} variant="filled">
+        {errors.city || errors.contact || errors.email || errors.fullname ||errors.specialization ?
+         <StyledButtonError disabled>Save</StyledButtonError>
+         : 
+        <StyledButton  onClick={handleSubmit} variant="filled">
           Save
         </StyledButton>
+        }
       </div>
     </div>
   );
@@ -133,7 +146,29 @@ const StyledTextField = styled(TextField)`
   .MuiOutlinedInput-notchedOutline {
     border-color: #43ff64d9;
   }
-`;
+  `;
+const StyledButtonError = styled(Button)`
+&& {
+  color: black;
+  border-color: red;
+  margin: 0px 0px 20px 0px;
+  padding: 10px;
+  font-weight: bolder;
+  font-size: 15px;
+  background-color: red;
+  width: 130px;
+  & svg {
+    font-size: 30px;
+  }
+  &:hover {
+    background-color: #00fa43;
+    color: black;
+    & svg {
+      color: black;
+    }
+  }
+}
+`
 const StyledButton = styled(Button)`
   && {
     color: black;

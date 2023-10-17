@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 const RegisterSchema = Yup.object({
-  img:Yup.string().required("Image is required"),
+  // img:Yup.string().required("Image is required"),
   email: Yup.string()
   .required('Email is required')
   .email('Invalid email address'),

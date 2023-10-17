@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { options, textCenter } from "./ChartData";
 ChartJS.register(ArcElement, Tooltip, Legend);
 export default function Chart({ values }) {
-  const [completedValue, setCompletedValue] = useState(40);
+  const [completedValue, setCompletedValue] = useState(20);
 
   let totalValue = 100;
   let incompleteValue = totalValue - completedValue;

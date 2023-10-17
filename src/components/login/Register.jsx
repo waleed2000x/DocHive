@@ -27,7 +27,7 @@ import RegisterSchema from "./Schema";
 export default function Resigter() {
 
   const navigate = useNavigate()
-  const{ userLoggedIn} = useUser();
+  const{ userLoggedIn, setUserLoggedIn } = useUser();
   useEffect(() => {
     if(userLoggedIn){
       navigate('/')
@@ -39,7 +39,6 @@ export default function Resigter() {
   const [alertErr, setAlertErr] = useState(false);
 
   const iValues = {
-    image:'',
     email: '',
     fullname : '',
     password:'',
@@ -61,6 +60,8 @@ export default function Resigter() {
         resetForm()
         navigate('/')
       }, 1000);
+      setUserLoggedIn(true)
+      console.log(userLoggedIn);
     }
   })
   return (
@@ -114,7 +115,7 @@ export default function Resigter() {
         <div className="inputs-login">
           <div className="signup-inputs">
             <div className="input">
-              <ImageUpload values={values} errors={errors} handleChange={handleChange} />
+              <ImageUpload />
               <TextField
                 variant="outlined"
                 label="Email"
@@ -147,6 +148,7 @@ export default function Resigter() {
                 className="MUI-textfield"
                 placeholder="Password"
                 name="password"
+                type="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.password}
