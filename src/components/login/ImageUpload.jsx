@@ -6,7 +6,6 @@ export default function ImageUpload() {
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
   const [alert, setAlert] = useState(false);
-
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
     if (isFileFormatValid(file)) {
@@ -21,25 +20,24 @@ export default function ImageUpload() {
       }, 3000);
       setMessage(
         "Invalid file format. Please upload a png, webp, jpg, or jpeg file."
-      );
-    }
-  }, []);
-
-  const isFileFormatValid = (file) => {
-    const validFormats = ["image/png", "image/webp", "image/jpeg", "image/jpg"];
-    return validFormats.includes(file.type);
-  };
-
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/png, image/webp, image/jpeg, image/jpg",
-    onDrop,
-  });
-
-  const dropzoneSize = "80px";
-  const imageSize = "80px";
-
-  return (
-    <div>
+        );
+      }
+    }, []);
+    
+    const isFileFormatValid = (file) => {
+      const validFormats = ["image/png", "image/webp", "image/jpeg", "image/jpg"];
+      return validFormats.includes(file.type);
+    };
+    
+    const { getRootProps, getInputProps } = useDropzone({
+      accept: "image/png, image/webp, image/jpeg, image/jpg",
+      onDrop,
+    });
+    
+    const dropzoneSize = "80px";
+    const imageSize = "80px";
+    return (
+      <div>
       {alert && (
         <Alert
           severity="error"

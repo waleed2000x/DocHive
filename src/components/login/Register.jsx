@@ -14,7 +14,6 @@ import {
   Button,
   FormHelperText,
 } from "@mui/material";
-import * as Yup from  'yup'
 import LoginLottie from "./LoginLottie";
 import { styled } from "styled-components";
 import AuthButtons from "./AuthButtons";
@@ -40,6 +39,7 @@ export default function Resigter() {
   const [alertErr, setAlertErr] = useState(false);
 
   const iValues = {
+    image:'',
     email: '',
     fullname : '',
     password:'',
@@ -114,7 +114,7 @@ export default function Resigter() {
         <div className="inputs-login">
           <div className="signup-inputs">
             <div className="input">
-              <ImageUpload />
+              <ImageUpload values={values} errors={errors} handleChange={handleChange} />
               <TextField
                 variant="outlined"
                 label="Email"
@@ -208,7 +208,7 @@ export default function Resigter() {
                     </MenuItem>
                   ))}
                 </Select>
-                <FormHelperText style={{color:'red', fontWeight:'300'}}>{errors?.country || ' '}</FormHelperText>
+                <FormHelperText style={{color:'#d43d35', fontWeight:'400'}}>{errors?.country || ' '}</FormHelperText>
                 {/* <p style={{color:'red', margin:'0px', padding:'5px 0px',fontWeight:'200', fontSize:'12px'}}>{errors?.country || ' '}</p> */}
               </FormControl>
             </div>
