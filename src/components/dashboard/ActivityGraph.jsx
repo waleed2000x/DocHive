@@ -21,11 +21,11 @@ ChartJS.register(
             labels:['Mon', "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             datasets:[{
                 label:'Daily Time Use',
-                data:[3, 9, 6.7, 3, 10, 2, 0],
+                data:[3, 9, 5, 3, 10, 2, 0],
                 backgroundColor:'white',
                 borderColor:'#43ff64',
                 pointBorderColor:'white',
-                tension:0.4
+                tension:0.5
             }]
         }
         const options ={
