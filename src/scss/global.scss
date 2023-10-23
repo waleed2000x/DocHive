@@ -101,6 +101,9 @@ body {
         }
       }
     }
+    .dialouge {
+      display: none;
+    }
     .signin-button {
       margin-right: 20px;
       color: $white;
@@ -111,6 +114,9 @@ body {
       }
     }
     .login {
+      .appbar-form-small-screen {
+        display: none;
+      }
       .appbar-form {
         display: flex;
         align-items: center;
@@ -131,6 +137,9 @@ body {
           .MuiOutlinedInput-notchedOutline {
             border-color: #43ff64d9;
           }
+        }
+        .appbar-login-button-small-screen {
+          display: none;
         }
         .appbar-login-button {
           margin: 0px 5px 4px 0px;
@@ -582,5 +591,12 @@ body {
 @media screen and (max-width: 700px) {
   .appbar .appbar-center .login .appbar-form {
     display: none;
+  }
+  .appbar-form-small-screen {
+    display: flex;
+    flex-direction: column;
+  }
+  .appbar .appbar-center .dialouge {
+    display: block;
   }
 }
