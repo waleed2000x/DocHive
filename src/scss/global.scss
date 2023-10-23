@@ -202,8 +202,8 @@ body {
         @include GlassComponent();
         .stethoscope {
           position: absolute;
-          bottom: 30px;
-          left: 70px;
+          bottom: 10px;
+          left: 50px;
           width: 150px;
         }
         .title-heading {
@@ -579,6 +579,28 @@ body {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .doctor-title {
+    display: flex;
+    flex-direction: column;
+  }
+  .landing-parent .doctor-title .doctor-assist {
+    width: 70%;
+  }
+  .landing-parent .doctor-title .title-intro {
+    width: 100%;
+  }
+  .doctor-connect {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+  }
+  .landing-parent .doctor-connect .doctor-mobile {
+    margin: 50px 0px 50px 50px;
+  }
+  .landing-parent .doctor-connect .connect-intro {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 850px) {
   .appbar-inputs {
     width: 160px;

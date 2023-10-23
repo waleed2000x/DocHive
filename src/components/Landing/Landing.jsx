@@ -38,7 +38,7 @@ export default function Landing() {
               words={[
                 "Connect with Colleagues",
                 "A Medical Community Hub",
-                "Empowering Doctors Together.",
+                "Empowering Doctors.",
               ]}
             />
             <div className="join-button">
