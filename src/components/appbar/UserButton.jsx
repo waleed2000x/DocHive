@@ -112,7 +112,7 @@ export default function UserButton() {
               className="small-screen-login-trigger"
               onClick={handleClickOpen}
             >
-              Login
+              <p>Login</p>
             </StyledButton>
             <Dialog
               PaperProps={{
@@ -221,15 +221,21 @@ export default function UserButton() {
 
 const StyledButton = styled.button`
   margin: 0px 10px 4px 0px;
+  font-size: 20px;
   & {
     color: #43ff64d9;
     border-color: transparent;
-    padding: 5px 10px;
     font-weight: bold;
     background-color: transparent;
     border-radius: 5px;
     & svg {
       font-size: 30px;
+    }
+    & p {
+      margin: 0px;
+      padding: 5px 0px;
+      font-weight: 500;
+      text-transform: uppercase;
     }
     &:hover {
       background-color: #43ff64d9;
