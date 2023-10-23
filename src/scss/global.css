@@ -635,6 +635,9 @@ body {
     flex-direction: column;
   }
   .landing-parent .doctor-communicate .connect-with-people {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
   }
 }
@@ -644,6 +647,13 @@ body {
   }
   .appbar-login-button {
     width: 50px;
+  }
+  .landing-parent .doctor-connect .connect-intro .connect-intro-center .doctor-conversation-animation {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 150px;
+    height: 150px;
   }
 }
 @media screen and (max-width: 700px) {
