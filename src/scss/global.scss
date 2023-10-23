@@ -600,6 +600,12 @@ body {
   .landing-parent .doctor-connect .connect-intro {
     width: 100%;
   }
+  .doctor-communicate {
+    flex-direction: column;
+  }
+  .landing-parent .doctor-communicate .connect-with-people {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 850px) {
   .appbar-inputs {
