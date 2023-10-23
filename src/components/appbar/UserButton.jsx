@@ -117,28 +117,41 @@ export default function UserButton() {
             <Dialog
               PaperProps={{
                 style: {
-                  backgroundColor: "rgba(0, 0, 0, 0.8)",
-                  border: "2px solid #43ff64",
-                  height: "90vh",
-                  width: "80%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "white",
+                  padding: "30px",
+                  // height: "50vh",
+                  // width: "80%",
                 },
               }}
               open={openDialouge}
               onClose={handleDialougeClose}
             >
-              <DialogTitle>Login</DialogTitle>
+              <DialogTitle
+                style={{
+                  color: "black",
+                  textTransform: "uppercase",
+                  width: "100%",
+                  textAlign: "center",
+                  fontWeight: "600",
+                }}
+              >
+                Login
+              </DialogTitle>
               <DialogContent>
                 <form
                   method="post"
                   onSubmit={handleSubmit}
                   className="appbar-form-small-screen"
                 >
-                  <TextField
+                  <StyledTextField
                     color="success"
                     variant="outlined"
                     size="small"
                     label="User Name"
-                    className="appbar-inputs"
                     autoComplete="off"
                     placeholder="username"
                     name="username"
@@ -147,12 +160,11 @@ export default function UserButton() {
                     error={Boolean(errors.username)}
                     helperText={errors?.username || " "}
                   />
-                  <TextField
+                  <StyledTextField
                     color="success"
                     variant="outlined"
                     size="small"
                     label="Password"
-                    className="appbar-inputs"
                     autoComplete="off"
                     placeholder="Password"
                     name="password"
@@ -243,6 +255,24 @@ const StyledButton = styled.button`
       & svg {
         color: black;
       }
+    }
+  }
+`;
+
+const StyledTextField = styled(TextField)`
+  .MUI-textfield {
+    margin: 50px 0px 0px 0px;
+    .MuiOutlinedInput-root {
+      color: white;
+      width: 9%;
+    }
+
+    .MuiInputLabel-root {
+      color: #43ff64d9;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #43ff64d9;
     }
   }
 `;
