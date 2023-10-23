@@ -6,8 +6,21 @@ import DoctorConversationAnimation from "./DoctorConversationAnimation";
 import Heartbeat from "./Heartbeat";
 import DoctorAsssistantAnimation from "./DoctorAssistantAnimation";
 import StethoscopeAnimation from "./StethoscopeAnimation";
+import axios from "axios";
 
 export default function Landing() {
+  const username = "waleed2000x";
+
+  axios
+    .get(`https://api.github.com/users/${username}/followers`)
+    .then((response) => {
+      const followers = response.data;
+      console.log("Followers:", followers);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+
   return (
     <div className="landing-parent">
       <div className="doctor-title">

@@ -5,7 +5,6 @@
 // MEASUREMENTS
 $AppbarHeight: 90px;
 // COLORS
-
 $neon: #43ff64d9;
 $white: white;
 
@@ -457,116 +456,131 @@ body {
   .dashboard-center {
     width: 98%;
     margin-top: 25px;
-// transform: skew(-20deg);
-.row{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-.recent-chats{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 30%;
-  height: 300px;
-  // padding: 10px 0px;
-  @include GlassComponent();
-  .recent-chat-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-    font-size: 20px;
-    & p {
-      margin: 10px;
+    // transform: skew(-20deg);
+    .row {
       display: flex;
-      align-items: center;
-      height: 20px;
-      & svg {
-        font-size: 35px;
-        padding-right: 10px;
-      }
-    }
-  }
-  .recent-list{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    .user-message{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: $white;
-      border-radius: 10px;
-      padding: 10px;
-      // margin-top: 20px;
-      height: max-content;
-      .recent-info{
+      width: 100%;
+      justify-content: space-between;
+      .recent-chats {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        & h4 {
-          margin: 0px;
-          & span {
-            color: $neon;
-            margin: 0px;
+        width: 30%;
+        height: 300px;
+        // padding: 10px 0px;
+        @include GlassComponent();
+        .recent-chat-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-weight: 600;
+          font-size: 20px;
+          & p {
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            height: 20px;
+            & svg {
+              font-size: 35px;
+              padding-right: 10px;
+            }
           }
         }
-        & p{
-          // animation:60s linear 0s infinite normal none running;
-          margin: 5px 0px 0px 0px;
-          font-size: 10px;
-          font-style: italic;
-          padding-left: 30px;
-        }
-      }
-    }
-  }
-    }
-    .profile-information{
-      display: flex;
-      height: 300px;
-      width: 67%;
-      @include GlassComponent();
-      .dashboard-avatar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 33.33%;
-        .dash-avatar{
-          width: 200px;
-          height: 200px;
-          border: 5px solid #00ff2f;
-        }
-      }
-      .dashboard-details{
-        display: flex;
-        flex-direction: column;
-        width: 33.33%;
-        & h1{
-          color: $white;
-          font-size: 30px;
-          & span {
-            color: $neon;
-          }
-        }
-        & p{
-          color: $white;
-          & span {
-            color: $neon;
+        .recent-list {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          .user-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: $white;
+            border-radius: 10px;
+            padding: 10px;
+            // margin-top: 20px;
+            height: max-content;
+            .recent-info {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              & h4 {
+                margin: 0px;
+                & span {
+                  color: $neon;
+                  margin: 0px;
+                }
+              }
+              & p {
+                // animation:60s linear 0s infinite normal none running;
+                margin: 5px 0px 0px 0px;
+                font-size: 10px;
+                font-style: italic;
+                padding-left: 30px;
+              }
+            }
           }
         }
       }
-      .activity-graph{
+      .profile-information {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 33.33%;
+        height: 300px;
+        width: 67%;
+        @include GlassComponent();
+        .dashboard-avatar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 33.33%;
+          .dash-avatar {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #00ff2f;
+          }
+        }
+        .dashboard-details {
+          display: flex;
+          flex-direction: column;
+          width: 33.33%;
+          & h1 {
+            color: $white;
+            font-size: 30px;
+            & span {
+              color: $neon;
+            }
+          }
+          & p {
+            color: $white;
+            & span {
+              color: $neon;
+            }
+          }
+        }
+        .activity-graph {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 33.33%;
+        }
       }
     }
   }
 }
+
+@media screen and (max-width: 850px) {
+  .appbar-inputs {
+    width: 160px;
+  }
+  .appbar-login-button {
+    width: 50px;
+    // height: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .appbar .appbar-center .login .appbar-form {
+    display: none;
+  }
 }
