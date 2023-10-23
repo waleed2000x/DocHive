@@ -123,8 +123,6 @@ export default function UserButton() {
                   alignItems: "center",
                   backgroundColor: "white",
                   padding: "30px",
-                  // height: "50vh",
-                  // width: "80%",
                 },
               }}
               open={openDialouge}
