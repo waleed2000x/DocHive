@@ -650,10 +650,16 @@ body {
   }
   .landing-parent .doctor-connect .connect-intro .connect-intro-center .doctor-conversation-animation {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 20px;
+    right: 20px;
     width: 150px;
     height: 150px;
+  }
+  .landing-parent .doctor-communicate .connect-with-people .connect-with-peopleH5 {
+    font-size: 28px;
+  }
+  .landing-parent .doctor-connect .connect-intro .connect-intro-center .connect-intro-centerH5 {
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 700px) {

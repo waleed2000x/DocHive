@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 "use client";
 import Typewriter from "typewriter-effect";
 export default function TypeWriter({ title, words, style }) {
