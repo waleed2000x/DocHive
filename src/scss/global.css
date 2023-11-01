@@ -649,6 +649,9 @@ body {
   .appbar-login-button {
     width: 50px;
   }
+  .BPM {
+    width: 300px;
+  }
   .landing-parent .doctor-connect .connect-intro .connect-intro-center .doctor-conversation-animation {
     position: absolute;
     top: 20px;
@@ -673,5 +676,8 @@ body {
   }
   .appbar .appbar-center .dialouge {
     display: block;
+  }
+  .BPM {
+    display: none;
   }
 }/*# sourceMappingURL=global.css.map */
